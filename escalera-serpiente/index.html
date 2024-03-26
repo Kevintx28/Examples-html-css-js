@@ -86,6 +86,8 @@
         }
     }
 
+
+
     /*for (let i = 0; i < 5; i = i + 1) { //crear filas
         //tablero.push([i])
         tablero.push([]) // -> [[1,2,3,4,5,6],[7,,8,9,10,11,12,13], []]
@@ -97,26 +99,31 @@
     //    console.log(tablero);
 
     // dibujar dato tablero
-    for (let i = 0; i < tablero.length; i++) {
-        for (let j = 0; j < tablero[i].length; j++) {
-            var casilla = document.createElement('div')
-            let elemento = tablero[i][j];
-            casilla.innerHTML = elemento.orden;
+dibujarTablero();
 
-            if (elemento.es_inicio) {
-                casilla.style.background = 'green'
-            }
-            if (elemento.es_fin) {
-                casilla.style.background = 'blue'
-            }
 
-            if (posicion_raton == elemento.orden) { // posicion 1
-                casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
+    function dibujarTablero() {
+        for (let i = 0; i < tablero.length; i++) {
+            for (let j = 0; j < tablero[i].length; j++) {
+                var casilla = document.createElement('div')
+                let elemento = tablero[i][j];
+                casilla.innerHTML = elemento.orden;
+
+                if (elemento.es_inicio) {
+                    casilla.style.background = 'green'
+                }
+                if (elemento.es_fin) {
+                    casilla.style.background = 'blue'
+                }
+
+                if (posicion_raton == elemento.orden) { // posicion 1
+                    casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
+                }
+                //document.body.append(casilla);
+                let my_section = document.querySelector('section');
+                my_section.appendChild(casilla)
+                console.log(tablero[i][j])
             }
-            //document.body.append(casilla);
-            let my_section = document.querySelector('section');
-            my_section.appendChild(casilla)
-            console.log(tablero[i][j])
         }
     }
 
