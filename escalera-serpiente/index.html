@@ -44,7 +44,7 @@
 
     </section>
     <button onclick="girarDado()">
-        0
+        -
     </button>
 </body>
 <script>
@@ -122,7 +122,6 @@
                 //document.body.append(casilla);
                 let my_section = document.querySelector('section');
                 my_section.appendChild(casilla)
-                console.log(tablero[i][j])
             }
         }
     }
@@ -139,7 +138,20 @@
         limpiarTablero();
 
         // implementar numero ramdon y asignar valor a posicion de raton
-        posicion_raton = posicion_raton + 1
+        let ramdom_dado = Math.floor(Math.random() * 6) + 1 ;
+
+        //fijar valro del button dadod con ramdom_dado
+        const boton_dado = document.querySelector('button');
+        boton_dado.innerHTML = ramdom_dado;
+
+
+
+        console.log(ramdom_dado)
+        posicion_raton = posicion_raton + ramdom_dado;
+        if(posicion_raton == 30){
+            alert("Ganaste!")
+        } 
+
         // pintar nuevametne el tablero
         dibujarTablero();
 
