@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header{
+            border: solid;
+            background-color: black;
+        }
+        footer {
+            height: 10px;
+            border: solid;
+        }
+
+        main {
+            display: flex;
+            border: solid;
+            height: 100%;
+            grid-row: 1;
+        }
+
+        header ul {
+            list-style-type: none;
+            overflow: auto;
+        }
+
+        header ul li {
+            float: left;
+            margin-right: 40px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .principal {
+            height: 100%;
+            border: solid;
+           
+        }
+
+
+
+        .galeria {
+            height: 80%;
+            border: solid red;
+            display: flex;
+            gap: 3px;
+        }
+
+        .fotos {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .fotos img {
+            width: 250px;
+            height: 250px;
+            margin: 10px;
+        }
+        .info {
+            padding: 40px;
+            width: 25%;
+            border: solid black; 
+        }
+
+        .extras {
+            height: 18%;
+            border: solid blue;
+        }
+
+        aside {
+           
+            border: solid yellow;
+            width: 400px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>Perfil</li>
+            <li>Info</li>
+            <li>Extras</li>
+            <li>Servicios</li>
+        </ul>
+    </header>
+    <main>
+        <div class="principal">
+            <div class="galeria">
+                <div class="fotos">
+                        <img src="https://cdn-icons-png.flaticon.com/512/588/588267.png" alt="dota 2">
+                        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg" alt="dota 2">
+                        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg" alt="dota 2">
+                        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg" alt="dota 2">
+                       
+                        
+
+                </div>
+                <div class="info">
+                    <h3>Informaciòn</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi corporis labore sit accusamus
+                        omnis saepe eos vero modi et repudiandae, accusantium iure autem dolore nesciunt cupiditate
+                        natus iste, quaerat itaque!</p>
+                </div>
+            </div>
+            <div class="extras"></div>
+        </div>
+        <aside>
+            <h3>Actividades</h3>
+            <ul>
+                <li>Actividad 1 </li>
+                <li>Actividad 2 </li>
+                <li>Actividad 3 </li>
+                <li>Actividad 3 </li>
+            </ul>
+        </aside>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

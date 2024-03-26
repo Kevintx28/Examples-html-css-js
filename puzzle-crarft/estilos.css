@@ -1,0 +1,35 @@
+body {
+    background-image: url('https://www.filterforge.com/filters/11635-v2.jpg');
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 9px;
+}
+article {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    transform-style: preserve-3d;
+    position: relative;
+
+}
+article > img {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    top: 15%;
+    width: 100%;
+    height: 100%;
+}
+article > span {
+    position: absolute;
+    backface-visibility: hidden;
+    font-size: 120px;
+    width: 100%;
+    text-align: center;
+    top: 20%;
+}
+
+.rotar {
+    transform: rotateY(180deg)
+}

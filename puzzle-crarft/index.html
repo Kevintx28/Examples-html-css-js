@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+
+</head>
+
+<body>
+
+
+</body>
+<script>
+
+    // Armar lista de articles que se deben enviar a la interfaz
+    const items = [];
+    let items_seleccionados = []; // este array solo debe contener 2 elementos
+    let score = 0;
+
+    // var ! const ! let
+    // seccion de ubicacion de GATO o PERRO
+    const urls = [
+        'https://www.minecraftskins.com/uploads/avatars/2021/05/02/eee7951b7c79a886bdd33fed4332d5efd5a9efa7.png?v612', //pos 0
+        'https://minecraftfaces.com/wp-content/bigfaces/big-cat-face.jpg'                                               //pos 1
+    ];
+
+
+
+    for (let i = 0; i < 12; i++) {
+        let posicion_mob_ramdon = (Math.floor(Math.random() * 2) + 1) - 1; // posicion ramdom entre perro => 0 o gato => 1
+        const nuevo_article = crearArticleConIdEImagen(i, urls[posicion_mob_ramdon]);
+
+        items.push(
+            {
+                article: nuevo_article, // elemento en html
+                mob: posicion_mob_ramdon, // perro 0 o gato 1
+                puede_girar: true, // es true cuando permite girar
+                posicion: i
+            }
+
+        );
+    }
+
+    // identificar si en la lista de perros 
+    const lista_perros = [];
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].mob == 0) {
+            lista_perros.push(items[i]);
+        }
+    }
+
+    //covertir primer elemento  en gato  si la lista de perroes es impar
+
+    if (lista_perros.length % 2 == 1) { // cantidade  perros es impar?
+        for (let i = 0; i < 12; i++) {
+            if (items[i].mob == 1) { // es gato ?
+                items[i].mob = 0;
+                items[i].article = crearArticleConIdEImagen(i, urls[0]);
+
+                break;
+
+            }
+        }
+
+    }
+
+
+    // enviar articles items a la pagina
+    for (let i = 0; i < 12; i++) {
+        document.body.appendChild(items[i].article);
+    }
+
+
+    //  mecanismo para generar article segun urlimagen
+    function crearArticleConIdEImagen(id_nuevo, urlImagen) {
+        const article = document.createElement('article');
+        article.setAttribute('id', id_nuevo)
+
+        article.onclick = function () {
+
+            const item = items[id_nuevo];
+            console.log(item.puede_girar)
+
+            if (item.puede_girar) { // se puede girar item?
+
+                article.classList.toggle('rotar');
+                //  paso 1agregar a la lista de 2 elementos
+                if (items_seleccionados.length < 3) {
+                    items_seleccionados.push(item)
+                }
+
+
+
+                // determinar si los mobs son iguales
+                if (items_seleccionados.length == 2) { // hay 2 elementos en la lista de seleccioandos ?
+                    if (items_seleccionados[0].mob == items_seleccionados[1].mob) { // son el mismmo mob?
+                        // si son iguales incrementar score y rotar el item
+                        score = score + 1;
+                        alert("+ " + score + " de experiencia!!");
+                        
+                        // cambair estado delos elementos de PÙEDE GIRAR A  FALSE
+                        items[items_seleccionados[0].posicion].puede_girar = false;
+                        items[items_seleccionados[1].posicion].puede_girar = false;
+                        // limpiar elemntos seleccionas
+                        items_seleccionados = [];
+                    } else {
+                        // restaurar seleccion de la lista seleccidos
+                        const mob1 = document.getElementById(items_seleccionados[0].posicion);
+                        const mob2 = document.getElementById(items_seleccionados[1].posicion);
+                        alert("Fallo!! :()")
+                        mob1.classList.toggle('rotar');
+                        mob2.classList.toggle('rotar');
+                        items_seleccionados = [];
+
+                    }
+                }
+                // si no lo son pasar
+
+            }
+
+        }
+
+        const img = document.createElement('img');
+        img.src = urlImagen;
+
+        const span = document.createElement('span');
+        span.textContent = '?';
+
+        article.append(img);
+        article.append(span);
+        return article;
+    }
+
+
+</script>
+
+</html>

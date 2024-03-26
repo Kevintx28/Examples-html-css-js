@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+
+}
+
+.principal {
+    background-image: url('https://blz-contentstack-images.akamaized.net/v3/assets/blt9c12f249ac15c7ec/bltb9d66ea215241de3/6487fac1feb99b113c93cd3f/masthead_1600.jpg');
+    height: 100vh;
+}
+
+.juegos {
+    background-image: url('https://blz-contentstack-images.akamaized.net/v3/assets/blt9c12f249ac15c7ec/bltf2882a4ba5554365/64837c29f7e25112a1a01541/grid_repeating.png');
+    height: 100vh;
+    padding: 40px;
+}
+
+article {
+    height: 350px;
+    width: 260px;
+    color: white;
+}
+.starcraft > header{
+background-image: url('https://blz-contentstack-images.akamaized.net/v3/assets/blt72f16e066f85e164/blt36cdea6ab7825512/sc2-bg-standard.jpg');
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+article > header > img {
+    width: 265px;
+    position: absolute;
+}
+
+article > header > video{
+    height: 100%;
+    display: none;
+}
+article > header:hover video{
+    display: block;
+}

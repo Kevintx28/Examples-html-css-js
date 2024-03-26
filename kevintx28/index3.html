@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --color-negro: #00a884;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            border: solid var(--color-negro);
+            background-color: var(--color-negro);
+        }
+
+        footer {
+            background-color: aquamarine;
+            border: solid var(--color-negro);
+            color: var(--color-negro);
+        }
+
+        main {
+            display: flex;
+            grid-row: 1;
+            padding: 20px 0px;
+        }
+
+        header ul {
+            list-style-type: none;
+            overflow: auto;
+        }
+
+        header ul li {
+            float: left;
+            margin-right: 40px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .principal {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .presentacion {
+            flex-grow: 2;
+            display: flex;
+            border: solid var(--color-negro);
+        }
+
+        .galeria {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 2;
+        }
+
+        .galeria img {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+
+        }
+
+        .info {
+            flex-grow: 1;
+            width: 25%;
+            padding: 40px;
+            border: solid var(--color-negro);
+            color: var(--color-negro)
+        }
+
+        .extras {
+            padding: 6px;
+            display: flex;
+            justify-content: center;
+            border: solid var(--color-negro);
+            border-top-width: 0px;
+        }
+
+        .extras h2 {
+            background-color: var(--color-negro);
+            color: white;
+            text-align: center;
+            font-size: x-large;
+            text-transform: uppercase;
+            width: 250px;
+        }
+
+
+        aside {
+
+            border: solid var(--color-negro);
+            width: 1000px;
+            padding: 40px;
+            margin-left: 20px;
+            color: var(--color-negro)
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>Perfil</li>
+            <li>Info</li>
+            <li>Extras</li>
+            <li>Servicios</li>
+        </ul>
+    </header>
+    <main>
+        <div class="principal">
+            <div class="presentacion">
+                <div class="galeria">
+
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/02/palworld-cartel-2611129.jpg"
+                        alt="dota 2">
+
+
+
+
+                </div>
+                <div class="info">
+                    <h3>Informaciòn</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi corporis labore sit accusamus
+                        omnis saepe eos vero modi et repudiandae, accusantium iure autem dolore nesciunt cupiditate
+                        natus iste, quaerat itaque!</p>
+                </div>
+            </div>
+            <div class="extras">
+                <h2>
+                    Extras
+                </h2>
+            </div>
+        </div>
+        <aside>
+            <h3>Actividades</h3>
+            <ul>
+                <li>Actividad 1 </li>
+                <li>Actividad 2 </li>
+                <li>Actividad 3 </li>
+                <li>Actividad 3 </li>
+                <li>Actividad 1 </li>
+                <li>Actividad 2 </li>
+                <li>Actividad 3 </li>
+
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <i>2024 Todos los derechos reservados</i>
+    </footer>
+</body>
+
+</html>

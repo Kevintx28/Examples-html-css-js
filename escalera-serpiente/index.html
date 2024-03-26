@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            gap: 400px;
+        }
+
+        button {
+            height: 50px;
+            width: 50px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(6, 160px);
+            /*numero columnas*/
+            grid-template-rows: repeat(5, 160px);
+            /*numero filas*/
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            background-color: tomato;
+            border: solid black;
+            font-size: xx-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+
+    </section>
+    <button onclick="girarDado()">
+        0
+    </button>
+</body>
+<script>
+
+    //armar matriz 
+    // ->>> ?
+
+    // dibujar numero de matriz en divs html
+    let tablero = [];
+    const numero_filas = 5;
+    const numero_columnas = 6;
+
+    let posicion_raton = 1;
+
+    let acumulador = 0;
+
+    for (let i = 0; i < numero_filas; i++) {
+        tablero.push([]);
+        for (let j = 0; j < numero_columnas; j++) {
+            let numero_orden = (numero_columnas * numero_filas) - acumulador;
+            if (i % 2 === 0) {
+                numero_orden = numero_orden + (j - ((numero_columnas - 1) - j));
+            }
+            acumulador++;
+            let es_inicio = false;
+            let es_fin = false;
+            if (numero_orden == 1) {
+                es_inicio = true;
+            }
+            if (numero_orden == 30) {
+                es_fin = true;
+            }
+            tablero[i].push(
+                {
+                    orden: numero_orden,
+                    es_inicio: es_inicio,
+                    es_fin: es_fin
+                });
+        }
+    }
+
+    /*for (let i = 0; i < 5; i = i + 1) { //crear filas
+        //tablero.push([i])
+        tablero.push([]) // -> [[1,2,3,4,5,6],[7,,8,9,10,11,12,13], []]
+        for (let j = 0; j < 6; j++) { // crear columnas
+            tablero[i].push(30 - acumulador)
+            acumulador++;  // -> acumulador = acumulador + 1;
+        }
+    }*/
+    //    console.log(tablero);
+
+    // dibujar dato tablero
+    for (let i = 0; i < tablero.length; i++) {
+        for (let j = 0; j < tablero[i].length; j++) {
+            var casilla = document.createElement('div')
+            let elemento = tablero[i][j];
+            casilla.innerHTML = elemento.orden;
+
+            if (elemento.es_inicio) {
+                casilla.style.background = 'green'
+            }
+            if (elemento.es_fin) {
+                casilla.style.background = 'blue'
+            }
+
+            if (posicion_raton == elemento.orden) { // posicion 1
+                casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
+            }
+            //document.body.append(casilla);
+            let my_section = document.querySelector('section');
+            my_section.appendChild(casilla)
+            console.log(tablero[i][j])
+        }
+    }
+
+    function girarDado() {
+        // limpiad tablero
+        let my_section = document.querySelector('section');
+        while (my_section.firstChild) {
+            my_section.removeChild(my_section.firstChild);
+        }
+
+        // implementar numero ramdon y asignar valor a posicion de raton
+        posicion_raton = posicion_raton + 1
+        // pintar nuevametne el tablero
+        for (let i = 0; i < tablero.length; i++) {
+            for (let j = 0; j < tablero[i].length; j++) {
+                var casilla = document.createElement('div')
+                let elemento = tablero[i][j];
+                casilla.innerHTML = elemento.orden;
+
+                if (elemento.es_inicio) {
+                    casilla.style.background = 'green'
+                }
+                if (elemento.es_fin) {
+                    casilla.style.background = 'blue'
+                }
+
+                if (posicion_raton == elemento.orden) {
+                    casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
+                }
+                //document.body.append(casilla);
+                let my_section = document.querySelector('section');
+                my_section.appendChild(casilla)
+                console.log(tablero[i][j])
+            }
+        }
+
+    }
+
+    //Tabla de multiplicar:
+
+
+    /*for (let a = 1; a <= 100; a++) {
+        console.log('tabla de multiplicar del: ', a);
+        for (let b = 1; b < 100; b++) {
+            multi = multi * b;
+            console.log(a, ' x ',b, ' = ', a*b)
+        }
+    }
+    
+    */
+
+</script>
+
+</html>
