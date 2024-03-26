@@ -126,13 +126,17 @@
             }
         }
     }
-
-    function girarDado() {
-        // limpiad tablero
+    // limpiad tablero
+    function limpiarTablero() {
         let my_section = document.querySelector('section');
         while (my_section.firstChild) {
             my_section.removeChild(my_section.firstChild);
         }
+    }
+
+    function girarDado() {
+        // limpiar
+        limpiarTablero();
 
         // implementar numero ramdon y asignar valor a posicion de raton
         posicion_raton = posicion_raton + 1
