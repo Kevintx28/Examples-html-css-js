@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            display: flex;
-            gap: 400px;
-        }
-
         button {
             height: 50px;
             width: 50px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            font-weight: bold;
+            border: solid red;
+            border-radius: 50%;
         }
 
         section {
@@ -137,17 +139,23 @@
         limpiarTablero();
 
         // implementar numero ramdon y asignar valor a posicion de raton
-        let ramdom_dado = Math.floor(Math.random() * 6) + 1 ;
+        let ramdom_dado = Math.floor(Math.random() * 6) + 1;
 
         //fijar valro del button dadod con ramdom_dado
         const boton_dado = document.querySelector('button');
         boton_dado.innerHTML = ramdom_dado;
 
         console.log(ramdom_dado)
-        posicion_raton = posicion_raton + ramdom_dado;
-        if(posicion_raton == 30){
+        
+        //verificar si posicicion no exede la cuenta del dado
+        if ((posicion_raton + ramdom_dado) <= 30) {
+            //avanzar segun cuetna de raton
+            posicion_raton = posicion_raton + ramdom_dado;
+        }
+
+        if (posicion_raton == 30) {
             alert("Ganaste!")
-        } 
+        }
 
         // pintar nuevametne el tablero
         dibujarTablero();
