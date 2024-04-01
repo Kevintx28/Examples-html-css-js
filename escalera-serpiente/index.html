@@ -59,6 +59,9 @@
     const numero_columnas = 6;
 
     let posicion_raton = 1;
+    //Todo: hacer que la posicion de la serpiente sea ramdon(No relevante)
+    const posicion_cabeza_serpiente = 26;
+    const posicion_cola_serpiente = 15;
 
     let acumulador = 0;
 
@@ -117,7 +120,18 @@
                     casilla.style.background = 'blue'
                 }
 
-                if (posicion_raton == elemento.orden) { // posicion 1
+                //dibujar cabeza de serpiente
+                if (posicion_cabeza_serpiente == elemento.orden) {
+
+                    casilla.style.backgroundColor = 'red'
+                }
+                //dibujar cola de serpiente
+                if (posicion_cola_serpiente == elemento.orden) {
+
+                    casilla.style.backgroundColor = 'chocolate'
+                }
+
+                if (posicion_raton == elemento.orden) { // posicionando raton
                     casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
                 }
                 //document.body.append(casilla);
@@ -146,15 +160,26 @@
         boton_dado.innerHTML = ramdom_dado;
 
         console.log(ramdom_dado)
-        
+
         //verificar si posicicion no exede la cuenta del dado
         if ((posicion_raton + ramdom_dado) <= 30) {
             //avanzar segun cuetna de raton
             posicion_raton = posicion_raton + ramdom_dado;
         }
 
+        if (posicion_cabeza_serpiente == posicion_raton) {
+            alert("Auch! :(");
+            //Todo: reproducir chillido de raton
+
+            // volver raton a la cola de la serpiente
+            posicion_raton = posicion_cola_serpiente;
+        }
+
         if (posicion_raton == 30) {
-            alert("Ganaste!")
+            alert("Ganaste!");
+
+            //Todo: reiniciar el juego
+
         }
 
         // pintar nuevametne el tablero
