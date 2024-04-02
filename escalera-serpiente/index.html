@@ -63,6 +63,9 @@
     const posicion_cabeza_serpiente = 26;
     const posicion_cola_serpiente = 15;
 
+    const posicion_fin_escalera = 21;
+    const posicion_pie_escalera = 4
+
     let acumulador = 0;
 
     for (let i = 0; i < numero_filas; i++) {
@@ -134,6 +137,17 @@
                 if (posicion_raton == elemento.orden) { // posicionando raton
                     casilla.style.backgroundImage = "url('https://www.pngall.com/wp-content/uploads/2017/05/Mouse-Animal-PNG-Clipart.png')"
                 }
+
+                // posicioanr escalera
+                if (posicion_fin_escalera == elemento.orden) {
+
+                    casilla.style.backgroundColor = 'yellow'
+                }
+                if (posicion_pie_escalera == elemento.orden) {
+
+                    casilla.style.backgroundColor = 'yellow'
+                }
+
                 //document.body.append(casilla);
                 let my_section = document.querySelector('section');
                 my_section.appendChild(casilla)
@@ -175,11 +189,22 @@
             posicion_raton = posicion_cola_serpiente;
         }
 
+        if (posicion_raton == posicion_pie_escalera) {
+            alert("+17 cuadros");
+            posicion_raton = posicion_fin_escalera
+        }
+
         if (posicion_raton == 30) {
             alert("Ganaste!");
 
-            //Todo: reiniciar el juego
+            
 
+            //window.location.reload()
+
+
+        }
+        if (posicion_raton == 30) {
+            posicion_raton = posicion_raton - 29
         }
 
         // pintar nuevametne el tablero
