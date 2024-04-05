@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cantidad_notas = window.prompt("Ingrese la cantidad de notas");
+        // acumulador para suma de notas
+        let acumulador = 0;
+        for (let i = 0; i < cantidad_notas; i++) {
+            let nota = parseInt(window.prompt("Ingrese nota: " + (i + 1)));
+            acumulador = acumulador + nota;
+        }
+
+        alert("Promedio: " + acumulador / cantidad_notas)
+    </script>
+</head>
+
+<body>
+    <h1>Problema 6.4</h1>
+</body>
+
+</html>

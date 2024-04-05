@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const numero_distancias = window.prompt("numero de distancias: ");
+
+        let resultado = 0;
+        let suma_velocidades = 0;
+        for (let i = 1; i <= numero_distancias; i++) {
+            const distancia = window.prompt("distancia " + i + ": ");
+            const tiempo = window.prompt("tiempo " + i + ": ");
+            suma_velocidades = suma_velocidades + distancia / tiempo;
+        }
+        alert("velocidad promedio es:" + suma_velocidades / numero_distancias)
+
+    </script>
+</head>
+
+<body>
+    <h1>Problema 6.2</h1>
+</body>
+
+</html>
