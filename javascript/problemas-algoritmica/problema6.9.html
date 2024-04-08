@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let valor_n = window.prompt("Ingrese valor N:");
+        for (let a = 1; a <= valor_n; a++) {
+            for (let b = 1; b <= valor_n; b++) {
+                for (let c = 1; c <= valor_n; c++) {
+                    if ((Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2)) {
+                        console.log(a, b, ' = ', c)
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Problema 6.9</h1>
+</body>
+
+</html>
