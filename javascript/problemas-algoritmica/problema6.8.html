@@ -6,21 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
-
-        for (let horas = 0; horas < 24; horas++) {
-            for (let minutos = 0; minutos < 60; minutos++) {
-                for (let segundos = 0; segundos < 60; segundos++) {
-                    console.log(horas + 'h  ' + minutos + 'm' + '  ' + segundos + 's')
-                }
-
+        let contador_mult_cifras = 0;
+        for (let cifra = 1000; cifra <= 9999; cifra++) { // todos los numero de 4 cifras
+            if (cifra % 3 == 0 && cifra % 7 == 0) { // cifra es multipl de 3  y  7?
+                contador_mult_cifras = contador_mult_cifras + 1;
             }
         }
+        alert(contador_mult_cifras)
     </script>
 </head>
 
 <body>
-    Problema 6.7
+    <h1>Problema 6.8</h1>
+
+<h1>solucion:
+    definicio de variables
+    i: numeros a evaluar
+    m: cantidad de nuemros de 4 cifras multiplos de e3 y 7
+</h1>
+
+    <H2>Debemos evaluar todos los numero de 4 cifras(entre 1000 y 9999)
+        preguntando si son devididos por 3 y 7 al mismo tiempo, Para esto 
+        hacemos uso de un bucle en e lcual se ira generando sucesivamente
+        los numeros a  evaluar dentro del cuerpo del bucle se procede
+        a la evaluacion y si la condicion es cierta aumentaremos el 
+        contador de n en una unidad, finalmente emprimiremos 
+
+    </H2>
 </body>
 
 </html>
