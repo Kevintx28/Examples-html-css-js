@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (let i = 100; i < 1000; i = i + 1) {
+            let nro = 1;
+            let inv = 0;
+            while (nro > 0) {
+                inv = (10 * inv) + nro % 10;
+                nro = (nro / 10);
+                console.log(inv)
+            }
+            
+            if ((i + 297) == inv) {
+                console.log(i)
+            }
+
+            //Todo resutlado infinito. Implementar en C/C++/java
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Problema 6.12</h1>
+</body>
+
+</html>

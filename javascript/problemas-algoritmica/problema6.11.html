@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let may = -32767;
+        let n = window.prompt('Ingrese cantidad de numeros: ');
+        for (let i = 0; i < n; i++) {
+            let nro = parseInt(window.prompt('Ingrese numero: ' + (i + 1)));
+            if (nro > may) {
+                may = nro;
+            }
+        }
+        alert('El mayor es: ' + may)
+
+    </script>
+</head>
+
+<body>
+    <h1>Problema 6.11</h1>
+
+</body>
+
+</html>
