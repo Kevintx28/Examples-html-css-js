@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const A = [
+            [1, 2, 3], // fila 1 
+            [4, 1, 0] // fila 2
+        ];
+        // ->  2 x 3
+        const B = [
+            [1, 1, 2],
+            [1, -1, 0],
+            [2, 0, 3]
+        ]
+        const cant_colums_A = A[0].length; // cantidad e columnas de A : 3
+        const cant_filas_B = B.length; // => cantidad de filas de B : 3
+
+        if (cant_colums_A == cant_filas_B) {
+            for (let i = 0; i < 2; i++) {
+                //console.log(A[i])
+                for (let j = 0; j < 3; j++) {
+                    console.log((A[i][j] * B[i][j]) + (A[i][j + 1] * B[i + 1][j]) + (A[i][j + 2] * B[i + 2][j]))
+                }
+            }
+        } else {
+            console.log("esta matrix no cumple para solucion")
+        }
+
+    </script>
+</head>
+
+<body>
+    <img src="ejercicio.PNG" alt="">
+    <br>
+    <span>
+        Es posible calcular A.B porque A
+        tiene tres columnas y B
+        tiene tres filas. El resultado del producto es una matriz de
+        2×3.</span>
+
+</body>
+
+</html>

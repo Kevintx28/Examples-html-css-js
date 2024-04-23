@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let opc;
+        do {
+            opc = parseInt(window.prompt("-------MENU-----¬\n[1]: Listar\n[2]: Editar\n[0]: Salir\n---------------"))
+            if (opc == 1) {
+                alert("LISTANDO")
+                console.table([{ dni: 45645, name: 'raul', lastName: 'tola' }])
+            }
+            if (opc == 2) {
+                alert("EDITANDO")
+            }
+            if (opc == 0) {
+                alert("SALIENDO DEL SISTEMA")
+            }
+
+            if(!(opc==1 || opc == 2 ||opc == 0)){
+                alert('ESTA OPCION NO ESTA DISPONIBLE ;)')
+
+                // plus no requerido
+                 const sali = confirm("quiere salir");
+                 if(sali){
+                    opc = 0
+                 }
+            }
+
+        } while (opc != 0);
+
+    </script>
+</head>
+
+<body>
+    <h1>Ejercicio 01</h1>
+    <p>Elaborar visualizaciòn de menù de acceso donde la interfaz muestra
+        un listado de opciones en el que el usuario
+        podra seleccion alguna opcion digitando su numero en relacion y seguidamente mostrar un mensaje
+
+    </p>
+    <span>lista de opciones y acciones a mstrar</span>
+    <ul>
+        <li>
+            [1] LISTAR (Muestra el mensaje en consola "LISTANDO")
+        </li>
+        <li>
+            [2] EDITAR (Muestra el mensaje en consola "EDITANDO")
+        </li>
+        <li>
+            [0] SALIR (Muestra el mensaje en consola "SALIENDO DEL SISTEMA")
+        </li>
+        <li>
+            [OTRO NUMERO ] (Muestra el mensaje en consola "NO EXITE OPCION")
+        </li>
+    </ul>
+</body>
+
+</html>
